@@ -48,6 +48,9 @@ bool isPalin(string str) {
     while (!s.isEmpty()) {
         char ch = s.pop();
         reversed += ch;
+        while (i < str.length() && str[i] == ' ') {
+            i++;
+        }
         if (ch != str[i++]) {
             return false;
         }
@@ -63,7 +66,7 @@ int main() {
         cout << " Check if the string is a palindrome\n";
         
                 cout << "Enter a string: ";
-                cin >> str;
+                getline(cin, str);
                 if (isPalin(str)) {
                     cout << "Yes, it's a palindrome.\n";
                 } else {
